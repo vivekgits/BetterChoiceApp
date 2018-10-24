@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	Title="{Binding Title}"
+	xmlns:prismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+	BackgroundColor="{Binding BackgroundColor}"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	xmlns:listingItemTemplateSelector="clr-namespace:BetterChoiceShared.Views.Home.ListingItem;assembly=BetterChoiceShared"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	x:Class="BetterChoiceShared.Views.ProductListing">
+    
+	<RelativeLayout>
+
+        <StackLayout
+            VerticalOptions="CenterAndExpand"
+            IsVisible="{Binding TheresNothingToShow}"
+            RelativeLayout.XConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=X,
+                                 Factor=0,
+                                 Constant=0}"
+        RelativeLayout.YConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=Y,
+                                 Factor=0,
+                                 Constant=0}"
+        RelativeLayout.WidthConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=Width,
+                                 Factor=1,
+                                 Constant=0}"
+        RelativeLayout.HeightConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=Height,
+                                 Factor=1,
+                                 Constant=0}">
+
+         <Label
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            FontSize="40"
+            FontAttributes="Bold"
+            Text="Nothing to show"/>
+
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            Text="Swipe down to try again. :)"/>
+
+        </StackLayout>
+
+        
+		<ListView
+		ItemsSource="{Binding Articles}"
+		SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
+		SeparatorColor="Transparent"
+		HasUnevenRows="true"
+        BackgroundColor="Transparent"
+		SeparatorVisibility="None"
+		RefreshCommand="{Binding RefreshListingCommand}"
+		IsPullToRefreshEnabled="true"
+		IsRefreshing="{Binding IsRefreshingListing}"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand"
+        RelativeLayout.XConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=X,
+                                 Factor=0,
+                                 Constant=0}"
+        RelativeLayout.YConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=Y,
+                                 Factor=0,
+                                 Constant=0}"
+        RelativeLayout.WidthConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=Width,
+                                 Factor=1,
+                                 Constant=0}"
+        RelativeLayout.HeightConstraint =
+          "{ConstraintExpression Type=RelativeToParent,
+                                 Property=Height,
+                                 Factor=1,
+                                 Constant=0}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<listingItemTemplateSelector:ListingItemTemplateSelector/>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+		<ListView.Behaviors>
+			<prismBehaviors:EventToCommandBehavior EventName="ItemSelected"
+				Command="{Binding ListingSelectedCommand}" EventArgsParameterPath="SelectedItem"/>
+		</ListView.Behaviors>
+	</ListView>
+ 
+	</RelativeLayout>
+	
+</ContentPage>
+

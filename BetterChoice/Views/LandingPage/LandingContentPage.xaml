@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	xmlns:prismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+	xmlns:behaviors="clr-namespace:Behaviors;assembly=BetterChoiceShared"
+	xmlns:template="clr-namespace:BetterChoiceShared.Views.LandingPage.LandingPageTemplate;assembly=BetterChoiceShared"
+	xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+	xmlns:dots="clr-namespace:BetterChoiceShared.Components.CarouselDotsGenerator;assembly=BetterChoiceShared"
+	BackgroundColor="{StaticResource leonaColor}"
+	prism:ViewModelLocator.AutowireViewModel="True" 
+	x:Class="BetterChoiceShared.Views.LandingContentPage">
+    
+	<RelativeLayout>
+
+		<StackLayout
+            RelativeLayout.XConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=X,
+                             Factor=0,
+                             Constant=0}"
+    RelativeLayout.YConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Y,
+                             Factor=0,
+                             Constant=0}"
+        RelativeLayout.WidthConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1,
+                             Constant=0}"
+    RelativeLayout.HeightConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=1,
+                             Constant=0}"
+		Padding="30"
+		Orientation="Horizontal">
+
+           <Label
+				x:Name="SkipLabel"
+				FontAttributes="Bold"
+				Text="Skip"
+				TextColor="#99FFFFFF"
+				FontSize="20"
+				HorizontalOptions="EndAndExpand"
+				VerticalOptions="StartAndExpand">
+
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding SkipLandingPage}"/>
+				</Label.GestureRecognizers>
+				
+			<Label.Behaviors>
+					<behaviors:HideViewIf HideControlIf="{Binding ShowSkip}"/>
+				</Label.Behaviors>
+			</Label>
+
+		</StackLayout>
+
+
+        <cv:CarouselView
+            RelativeLayout.XConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=X,
+                             Factor=0,
+                             Constant=0}"
+    RelativeLayout.YConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Y,
+                             Factor=0,
+                             Constant=0}"
+        RelativeLayout.WidthConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1,
+                             Constant=0}"
+    RelativeLayout.HeightConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=1,
+                             Constant=0}"
+            x:Name="Carousel"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            ItemsSource="{Binding PagesModelData}"
+            Position="{Binding CarouselPosition}">
+            
+                <cv:CarouselView.ItemTemplate>
+                  <DataTemplate>
+                    <template:LandingPageViewTemplate/>
+                  </DataTemplate>
+                </cv:CarouselView.ItemTemplate>
+
+            <cv:CarouselView.Behaviors>
+                    <prismBehaviors:EventToCommandBehavior EventName="PositionSelected"
+                Command="{Binding PositionChangedCommand}" EventArgsParameterPath="SelectedPosition"/>
+            </cv:CarouselView.Behaviors>
+            
+      </cv:CarouselView>
+
+		<StackLayout
+            RelativeLayout.XConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=X,
+                             Factor=0,
+                             Constant=0}"
+    RelativeLayout.YConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Y,
+                             Factor=0,
+                             Constant=0}"
+        RelativeLayout.WidthConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1,
+                             Constant=0}"
+    RelativeLayout.HeightConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=1,
+                             Constant=0}"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="End"
+			Padding="0,0,0,50">
+
+			<StackLayout 
+				VerticalOptions="EndAndExpand"
+				Spacing="20">
+
+			<Button
+				x:Name="ContinueButton"
+				Opacity = "0"
+				Text="Get Started"
+				HorizontalOptions="CenterAndExpand"
+				TextColor="White"
+				Command="{Binding SkipLandingPage}"
+				BackgroundColor="{StaticResource likeLeonaColorButALittleBitMoreOpaque}"
+				WidthRequest="200">
+
+			<Button.Behaviors>
+					<behaviors:HideViewIf HideControlIf="{Binding ShowContinueButton}"/>
+				</Button.Behaviors>
+
+			</Button>
+
+			<dots:CarouselDotsGenerator
+				HorizontalOptions="CenterAndExpand"
+				ItemsSource="{Binding PagesModelData}"
+				CurrentPage="{Binding CarouselPosition}"/>
+
+			</StackLayout>
+
+		</StackLayout>
+
+	</RelativeLayout>
+</ContentPage>

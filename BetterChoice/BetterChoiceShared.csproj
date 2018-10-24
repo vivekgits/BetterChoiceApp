@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{349535DB-8E20-4FA6-9A7E-13C06E191973}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BetterChoiceShared</RootNamespace>
+    <AssemblyName>BetterChoiceShared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Currency.cs" />
+    <Compile Include="Domain\ListingDifferentModels.cs" />
+    <Compile Include="Domain\ListingItem.cs" />
+    <Compile Include="Domain\ListingItemType.cs" />
+    <Compile Include="Domain\ListingModelType.cs" />
+    <Compile Include="Domain\ListingOwner.cs" />
+    <Compile Include="Domain\Price.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SplashPageViewModel.cs" />
+    <Compile Include="BetterChoiceShared.cs" />
+    <Compile Include="AkavacheSqliteLinkerOverride.cs" />
+    <Compile Include="Services\Caching\ICache.cs" />
+    <Compile Include="Services\Caching\AkavacheImpl.cs" />
+    <Compile Include="ViewModels\LandingPageViewModel.cs" />
+    <Compile Include="ViewModels\ProductListingViewModel.cs" />
+    <Compile Include="Views\SplashPage\SplashPage.xaml.cs">
+      <DependentUpon>SplashPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LandingPage\LandingContentPage.xaml.cs">
+      <DependentUpon>LandingContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductListing\ProductListing.xaml.cs">
+      <DependentUpon>ProductListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LandingPage\LandingPageTemplate\LandingPageTemplateModel.cs" />
+    <Compile Include="Views\LandingPage\LandingPageTemplate\LandingPageViewTemplate.xaml.cs">
+      <DependentUpon>LandingPageViewTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CarouselDotsGenerator\CarouselDotsGenerator.xaml.cs">
+      <DependentUpon>CarouselDotsGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CarouselDotsGenerator\LittleDotView.xaml.cs">
+      <DependentUpon>LittleDotView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CarouselDotsGenerator\IDot.cs" />
+    <Compile Include="Views\ProductListing\ListingItems\ListingItemTemplateSelector.xaml.cs">
+      <DependentUpon>ListingItemTemplateSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductListing\ListingItems\AnnouncementItem\AnnouncementItemView.xaml.cs">
+      <DependentUpon>AnnouncementItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductListing\ListingItems\BasicItem\BasicItemView.xaml.cs">
+      <DependentUpon>BasicItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductListing\ListingItems\MoneyConverter.cs" />
+    <Compile Include="Views\ProductListing\ListingItems\ZoomInBehavior.cs" />
+    <Compile Include="Views\ListingDetail\ListingDetail.xaml.cs">
+      <DependentUpon>ListingDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ListingDetailViewModel.cs" />
+    <Compile Include="Components\Like\LikeView.xaml.cs">
+      <DependentUpon>LikeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Like\LikeViewModel.cs" />
+    <Compile Include="Components\ListingModelSelection\ListingModelSelection.xaml.cs">
+      <DependentUpon>ListingModelSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ListingModelSelection\ListingModelSelectionTemplate.xaml.cs">
+      <DependentUpon>ListingModelSelectionTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ListingServices\IListingService.cs" />
+    <Compile Include="Services\ListingServices\ListingService.cs" />
+    <Compile Include="Components\Behaviors\HideViewIf.cs" />
+    <Compile Include="Views\ProductListing\ListingItems\BasicItemWIthinFrame\BasicItemWithinFrame.xaml.cs">
+      <DependentUpon>BasicItemWithinFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MasterDetail\MasterDetailContainer.xaml.cs">
+      <DependentUpon>MasterDetailContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MasterDetailContainerViewModel.cs" />
+    <Compile Include="Views\MasterDetail\AppDrawer\AppDrawer.xaml.cs">
+      <DependentUpon>AppDrawer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AppDrawerViewModel.cs" />
+    <Compile Include="Views\MasterDetail\AppDrawer\AppDrawerItems\AppDrawerItem.xaml.cs">
+      <DependentUpon>AppDrawerItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MasterDetail\AppDrawer\AppDrawerItems\DrawerItem.cs" />
+    <Compile Include="Components\ListViewDivider\ListviewDivider.xaml.cs">
+      <DependentUpon>ListviewDivider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ListViewDivider\SeparatorView.xaml.cs">
+      <DependentUpon>SeparatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MoreAppsViewModel.cs" />
+    <Compile Include="Views\LeonaNavigationPage\LeonaNavigationPage.xaml.cs">
+      <DependentUpon>LeonaNavigationPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>App.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SplashPage\SplashPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>SplashPage.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LandingPage\LandingContentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>LandingPage.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductListing\ProductListing.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ProductListing.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LandingPage\LandingPageTemplate\LandingPageViewTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>LandingPageViewTemplate.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CarouselDotsGenerator\CarouselDotsGenerator.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>CarouselDotsGenerator.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CarouselDotsGenerator\LittleDotView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>LittleDotView.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductListing\ListingItems\ListingItemTemplateSelector.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ListingItemTemplateSelector.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductListing\ListingItems\AnnouncementItem\AnnouncementItemView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>AnnouncementItemView.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductListing\ListingItems\BasicItem\BasicItemView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>BasicItemView.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListingDetail\ListingDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ListingDetail.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Like\LikeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>LikeView.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ListingModelSelection\ListingModelSelection.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ListingModelSelection.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ListingModelSelection\ListingModelSelectionTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ListingModelSelectionTemplate.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductListing\ListingItems\BasicItemWIthinFrame\BasicItemWithinFrame.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>BasicItemWithinFrame.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MasterDetail\MasterDetailContainer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>MasterDetailContainer.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MasterDetail\AppDrawer\AppDrawer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>AppDrawer.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MasterDetail\AppDrawer\AppDrawerItems\AppDrawerItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>AppDrawerItem.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ListViewDivider\ListviewDivider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ListviewDivider.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ListViewDivider\SeparatorView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>SeparatorView.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeonaNavigationPage\LeonaNavigationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>LeonaNavigationPage.xaml</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Lottie.Forms, Version=1.0.6442.27471, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.3.2\lib\portable-net45+wp8+win+wpa81+dnxcore50\Lottie.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Me, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiProfile.Me.XForms.1.0.1\lib\portable45-net45+win8+wp8+wpa81\Me.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.4.0.1\lib\portable-net45+wp80+win8+wpa81+MonoAndroid10+MonoTouch10\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>..\packages\Prism.Core.6.3.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Forms">
+      <HintPath>..\packages\Prism.Forms.6.3.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Forms">
+      <HintPath>..\packages\Prism.Unity.Forms.6.3.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.Unity.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Refit, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\refit.2.4.1\lib\Portable-Net45+NetCore45+WP8+WPA81\Refit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Akavache">
+      <HintPath>..\packages\akavache.core.5.0.0\lib\Portable-Net45+Win8+WP8+Wpa81\Akavache.dll</HintPath>
+    </Reference>
+    <Reference Include="Akavache.Sqlite3">
+      <HintPath>..\packages\akavache.sqlite3.5.0.0\lib\Portable-Net45+Win8+WP8+Wpa81\Akavache.Sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_e_sqlite3">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_e_sqlite3.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_e_sqlite3.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.1.8.2.19-beta\lib\portable-net45+wp80+win8+wpa81\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.267\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.267\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.267\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.2.1.4\lib\netstandard1.0\PropertyChanged.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\netstandard1.0\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\netstandard1.0\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.1.6.2\lib\Portable-net45+win+wpa81+wp80\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.6.4.1\lib\portable-net45+wp8+win8+wpa81\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.6.4.1\lib\portable-net45+wp8+win8+wpa81\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.20\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.20\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.20\lib\portable-net45+win8+wpa81+wp8+netstandard1.0\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.267\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.267\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.4.267\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.4.267\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets'))" />
+  </Target>
+  <Import Project="..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets" Condition="Exists('..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets')" />
+  <Import Project="..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
+</Project>
